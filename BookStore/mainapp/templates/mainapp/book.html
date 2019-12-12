@@ -1,0 +1,41 @@
+{% extends 'mainapp/wrapper.html' %}
+{% load static %}
+{% block content %}
+<div id="wrapper">
+    <div id="movieTitle"><h2>{{ book.book_name }}</h2></div>
+    <div id="movieContent">
+        <div id="moviePhoto">
+            {% if book.book_image %}
+            <img src="{{ book.book_image.url }}" alt="Djoker" width="283px" height="390px">
+            {% else %}
+            <img src="{% static book.book_url_image %}" alt="Djoker" width="283px" height="390px">
+            {% endif %}
+        </div>
+        <div id="movieDescription"><p>{{ book.book_desctiption }}</p>
+            <p>
+                <strong>Название: </strong>{{ book.book_name }}
+                <br>
+                <strong>Год выпуска: </strong>{{book.book_year}}
+                <br>
+                <strong>Страна: </strong>{{book.book_country}}
+                <br>
+                <strong>Жанр: </strong>{{book.book_categories}}
+                <br>
+                <strong> Цена: </strong>{{ book.book_price }}
+                 <br>
+                <strong> Код товара: </strong>{{ book.book_cod }}
+                <br>
+                <strong> <a href="https://t.me/OnayRead_bot" style="width: 200px;"></a> </strong><a> Telegram bot - OnayRead </a>
+            </p>
+        </div>
+        <div class="block-stars">
+        </div>
+    		<div>
+    		</div>
+    </div>
+    </div>
+</div>
+<div>
+
+</div>
+{% endblock %}
